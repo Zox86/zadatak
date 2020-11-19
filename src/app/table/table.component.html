@@ -1,0 +1,170 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Folder Table">
+    <mat-form-field appearance="fill">
+      <mat-label>Search by:</mat-label>
+      <mat-select [formControl]="filterControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let option of filterFolder" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <table class="table">
+      <tr>
+        <th>objectID</th>
+        <th>name</th>
+        <th>docTypeName</th>
+        <th>folder</th>
+        <th>attributes</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let fol of url; index as i">
+          <td>{{fol.objectID}}</td>
+          <td>{{fol.name}}</td>
+          <td>{{fol.docTypeName}}</td>
+          <td>{{fol.folder}}</td>
+          <td>
+            <table class="table">
+              <tr>
+                <th>
+                  name
+                </th>
+                <th>
+                  value
+                </th>
+                <th>
+                  action | <a (click)="openDialog('Add',{})">Add row</a>
+                </th>
+              </tr>
+              <tbody *ngFor="let o of fol.attributes ">
+                <tr>
+                  <td>
+                    {{o.name}}
+                  </td>
+                  <td>
+                    {{o.value}}
+                  </td>
+                  <td>
+                    <a (click)="openDialog('Update', {})">Edit</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-tab>
+  <mat-tab label="Document Table">
+    <mat-form-field appearance="fill">
+      <mat-label>Search by:</mat-label>
+      <mat-select [formControl]="filterControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let option of filterDocument" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <table class="table">
+      <tr>
+        <th>objectID</th>
+        <th>name</th>
+        <th>docTypeName</th>
+        <th>folder</th>
+        <th>attributes</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let fol of url2; index as i">
+          <td>{{fol.objectID}}</td>
+          <td>{{fol.name}}</td>
+          <td>{{fol.docTypeName}}</td>
+          <td>{{fol.folder}}</td>
+          <td>
+            <table class="table">
+              <tr>
+                <th>
+                  name
+                </th>
+                <th>
+                  value
+                </th>
+                <th>
+                  action | <a (click)="openDialog('Add',{})">Add row</a>
+                </th>
+              </tr>
+              <tbody *ngFor="let o of fol.attributes ">
+                <tr>
+                  <td>
+                    {{o.name}}
+                  </td>
+                  <td>
+                    {{o.value}}
+                  </td>
+                  <td>
+                    <a (click)="openDialog('Update', {})">Edit</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-tab>
+  <mat-tab label="Invoice Table">
+    <mat-form-field appearance="fill">
+      <mat-label>Search by:</mat-label>
+      <mat-select [formControl]="filterControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let option of filterInvoice" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <table class="table">
+      <tr>
+        <th>objectID</th>
+        <th>name</th>
+        <th>docTypeName</th>
+        <th>folder</th>
+        <th>attributes</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let fol of url3; index as i">
+          <td>{{fol.objectID}}</td>
+          <td>{{fol.name}}</td>
+          <td>{{fol.docTypeName}}</td>
+          <td>{{fol.folder}}</td>
+          <td>
+            <table class="table">
+              <tr>
+                <th>
+                  name
+                </th>
+                <th>
+                  value
+                </th>
+                <th>
+                  action | <a (click)="openDialog('Add',{})">Add row</a>
+                </th>
+              </tr>
+              <tbody *ngFor="let o of fol.attributes ">
+                <tr>
+                  <td>
+                    {{o.name}}
+                  </td>
+                  <td>
+                    {{o.value}}
+                  </td>
+                  <td>
+                    <a (click)="openDialog('Update', {})">Edit</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-tab>
+</mat-tab-group>

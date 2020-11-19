@@ -1,0 +1,23 @@
+table {
+  width: 80%;
+  margin: 2vh auto;
+
+}
+mat-form-field{
+margin: 4vh;
+display: flex;
+justify-content: center;
+
+
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  color:#3F51B5;
+}
+.form{
+  width:20%
+}
